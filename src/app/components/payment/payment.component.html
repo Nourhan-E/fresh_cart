@@ -1,0 +1,25 @@
+<form class="form container" [formGroup]="paymentForm" (ngSubmit)="submitForm()">
+    <p class="title">Payment </p>
+    <p class="message">Signup now and get full access to our app. </p>
+
+    <label>
+    <input class="input" type="text" placeholder="Address" formControlName="details">
+        
+    </label>
+
+    <label>
+        <input class="input" type="tel" placeholder="Phone"  formControlName="phone">
+       
+    </label> 
+        
+    <label>
+        <input class="input" type="text" placeholder="City" formControlName="city">
+       
+    </label>
+    
+<button [disabled]="!paymentForm.valid"  class="btn btn-success">Pay</button>
+
+</form>
+
+
+ 

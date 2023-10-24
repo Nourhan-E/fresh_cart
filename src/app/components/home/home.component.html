@@ -1,0 +1,131 @@
+
+  <section class="Home_banners__nd+0m py-5" >
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="Home_banner__gRoGW">
+            <div class="Home_img-section__e47CX undefined">
+              <img
+                src="assets/Home-1.bf69c5faf745652d8009.png"
+                alt="banner"
+              />
+
+            </div>
+            <div class="Home_text-banner1__sQiX2">
+              <span>Exclusive Offer - 30%</span>
+              <h1>
+                Be Healthier <br> with Fresh Cart
+              </h1>
+              <a class="Link_button__O8sDQ" href="/">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="Home_col-two__YnB8Z">
+            <div class="Home_Subbanner__La8Z3">
+              <div class="Home_img-section__e47CX undefined">
+                <img src="assets/Home-2.5d00c06ebb057b287f6c.png" alt="banner"class="imgSlide1"/>
+              </div>
+              <div class="Home_text-banner2__BO4V3">
+                <div class="Home_row-one__9oxv1">
+                <h2>The best Organic <br />Products Online</h2>
+                <span>Save to 50%</span>
+                </div>
+                <div class="Home_row-two__F6lqs"><p>Save to 50%</p></div>
+           </div>
+
+            </div>
+            <div class="Home_Subbanner__La8Z3">
+              <div class="Home_img-section__e47CX undefined">
+                <img
+                  src="assets/Home-3.68dd75ee79704fce01ed.png"
+                  alt="banner"
+                />
+              </div>
+              <div class="Home_text-banner3__Dz326">
+                <div class="Home_row-one__9oxv1">
+                  <h2>
+                    Everyday Fresh &amp; <br />Clean with Our <br />Products
+                  </h2>
+                </div>
+                <div class="Home_row-two__F6lqs">
+                  <a class="Link_button__O8sDQ" href="/">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cateSlider container-fluid">
+    <owl-carousel-o [options]="cateSlider">
+
+      <ng-container *ngFor="let slide of Category">
+        <ng-template carouselSlide >
+      <img [src]="slide.image" height="300px"  [alt]="slide.name" [title]="slide.name">
+        <span class="badge rounded-pill text-bg-success  fs-6 mt-2 ">{{slide.name}}</span>
+        </ng-template>
+      </ng-container>
+  
+    </owl-carousel-o>
+  </section>
+
+<div class="home py-5 container-fluid ">
+  <input [(ngModel)]="term" type="text"  class="form-control mb-3 w-50 mx-auto" placeholder="Search">
+  <h3 class=" fw-bold bg-success p-3 w-25 m-auto text-center rounded-2 text-white mb-3">Most Popular Products</h3>
+
+  <div class="body ">
+    <div class="row g-3">
+      <div *ngFor="let pro of products | search2 :term" class="col-sm-6 col-md-3">
+   
+    <div role="button" [routerLink]=" ['/details',pro._id]" class="product-single-card">
+          <div class="product-top-area">
+            <div class="product-img">
+              <div class="first-view">
+                <img
+                  [src]="pro.imageCover"
+                  [title]="pro.title"
+                  alt="{{ pro.title }}"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+        
+          </div>
+          <div class="product-info">
+            <h6 class="product-category">
+              <a href="#">{{ pro.category.name }}</a>
+            </h6>
+            <h6 class="product-title text-truncate">
+              <a href="#">{{ pro.title }}</a>
+            </h6>
+            <div class="d-flex align-items-center">
+              <div class=" me-1">
+        <i [class.review-star]="pro.ratingsAverage >= item " *ngFor="let item of [1,2,3,4,5]" class="fa-solid fa-star "></i>
+              </div>
+
+              <span class="review-count">({{ pro.ratingsAverage }})</span>
+            </div>
+          </div>
+        </div>
+        <div class=" bg-white shadow rounded d-flex flex-wrap align-items-center py-2 justify-content-between">
+            <div class="new-price ps-2 fw-bold">{{ pro.price }} EGP</div>
+        <div class="sideicons d-flex justify-content-evenly ">
+                        <button  (click)="callAddCart(pro._id , btnelement)" #btnelement class="sideicons-btn ">
+                          <i *ngIf="!loading" class="fa-solid fa-cart-plus"></i>
+                          <i *ngIf="loading" class="fa-solid fa-circle-notch fa-spin"></i>
+                        </button>
+                        <!-- <button  class="sideicons-btn ">
+                          <i class="fa-solid fa-heart"></i>
+                        </button> -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

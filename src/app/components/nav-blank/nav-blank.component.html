@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      
+        <a class="navbar-brand" routerLink="">
+        <img src="assets/freshcart-logo.svg" alt="">
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active-nav">Home</a>
+                </li>
+            
+                <li class="nav-item">
+                <a class="nav-link" routerLink="/categories" routerLinkActive="active-nav">Categories</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" routerLink="/products" routerLinkActive="active-nav">products</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" routerLink="/brands" routerLinkActive="active-nav">brands</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-5 mt-2 mt-lg-0 align-items-center">
+                <li class="nav-item me-2">
+                <a class="nav-link position-relative" routerLink="/cart" >
+                    <i class="fa-solid fa-cart-shopping fs-3 text-main "></i>
+                <span class="badge bg-info position-absolute end-0 top-0  ">{{cartNum}}</span>
+                </a>
+                    </li>
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa-solid fa-gear  fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" routerLink="/forgetpassword">Forget Password</a></li>
+                          <li><a class="dropdown-item" routerLink="/allorders">My Last Orders</a></li>
+                          <li>
+                            <span (click)="signOut()" class="nav-link" role="button">Sign Out</span>
+                            </li>
+                    
+                        </ul>
+                      </li>
+                <li class="nav-item d-flex gap-3 me-4">
+                <a>
+                    <i class="fab fa-instagram "></i>
+                </a>
+                <a>
+                    <i class="fab fa-facebook "></i>
+                </a>
+                <a>
+                    <i class="fab fa-twitter "></i>
+                </a>
+                <a>
+                    <i class="fab fa-linkedin "></i>
+                </a>
+                </li>
+           
+       
+            </ul>
+    
+        </div>
+ 
+</nav>
+

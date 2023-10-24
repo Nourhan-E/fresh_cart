@@ -1,0 +1,20 @@
+<section >
+    <h3 class="text-main text-center fw-bold p-3">All Brands</h3>
+
+<div class="row g-4 p-4">
+    <div *ngFor="let brand of brands" (click)="onbrandsClic(brand)"  class="col-md-3" >
+        <div class="categories">
+        <div class="card  p-1 overflow-hidden ">
+            <img class="w-100 card-img rounded-0"  style="height: 200px;" [src]="brand?.image" alt="">
+            <div class="cat card-body">
+                <h6 class=" text-center fw-bold">{{brand?.name}}</h6>
+            </div>
+        </div>
+        
+     
+    </div>
+</div>
+</div>
+
+
+</section>
